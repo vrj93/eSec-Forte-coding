@@ -12,7 +12,9 @@ function camelCase(str, delimiter) {
       let newWord = '';
       
       for (let j = 0; j < word.length; j++) {
-        if (j === 0) {
+        if (i == 0) {
+            newWord += word[j].toLowerCase(); // small the first letter of the first word
+        } else if (i !== 0 && j === 0) {
           newWord += word[j].toUpperCase(); // Capitalize the first letter of the first word
         } else {
           newWord += word[j];

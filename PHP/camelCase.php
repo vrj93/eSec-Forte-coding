@@ -14,13 +14,17 @@ function camelCase($str, $delimiter)
     $arr = explode($delimiter, $str); // String to Array conversion
     $newString = ''; // Final output string
 
-    foreach ($arr as $word) {
+    for ($i = 0; $i < count($arr); $i++) {
+        $eachWord = $arr[$i];
         $newWord = '';
-        for ($i = 0; $i < strlen($word); $i++) { //looping over word string
+        
+        for ($j = 0; $j < strlen($eachWord); $j++) { //looping over word string
             if ($i == 0) {
-                $newWord .= strtoupper($word[$i]); //converting the first letter with index '0' to upper case
+                $newWord .= strtolower($eachWord[$j]);
+            } else if ($i != 0 && $j == 0) {
+                $newWord .= strtoupper($eachWord[$j]); //converting the first letter with index '0' to upper case
             } else {
-                $newWord .= $word[$i];
+                $newWord .= $eachWord[$j];
             }
         }
 
